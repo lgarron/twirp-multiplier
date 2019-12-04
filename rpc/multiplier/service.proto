@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package twirp.example.multiplier;
+option go_package = "multiplier";
+
+service Multiplier {
+  rpc Multiply(Arguments) returns (Product);
+}
+
+message Arguments {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message Product {
+  int32 value = 1;
+}
